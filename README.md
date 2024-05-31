@@ -14,7 +14,7 @@ Technologies Used:
 
 Frontend: HTML, CSS, Bootstrap, JavaScript
 Backend: Django (Python web framework)
-Database: SQLite (default database for Django)
+Database:Postgresql
 Data Visualization: Chart.js
 How to Use:
 
