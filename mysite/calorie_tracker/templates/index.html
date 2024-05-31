@@ -13,6 +13,7 @@
             text-align: left;
         }
     </style>
+
 </head>
 <body>
     <div class="container">
@@ -20,6 +21,16 @@
             <div class="col-md-12">
                 <nav class="navbar navbar-dark bg-primary">
                     <span class="navbar-brand">Calorie MacroTracker</span>
+                    <div class="ml-auto">
+                        {% if request.user.is_authenticated %}
+                        <form action="{% url 'logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-light">Logout</button>
+                        </form>
+                        {% else %}
+                        <a href="{% url 'login' %}" class="btn btn-light">Login</a>
+                        {% endif %}
+                    </div>
                 </nav>
             </div>
         </div>

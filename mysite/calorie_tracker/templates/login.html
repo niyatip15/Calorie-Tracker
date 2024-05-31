@@ -1,0 +1,21 @@
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<div class="container">
+  <div class="card">
+    <div class="header-bar">
+        <h1>Login</h1>
+    </div>
+
+    <div class="card-body">
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="button" type="submit" value="Login">
+        </form>
+        <p>Don't have an Account? <a href="{% url 'register' %}">Register</a></p>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

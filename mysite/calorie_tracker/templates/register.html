@@ -1,0 +1,38 @@
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="container">
+  <div class="card">
+    <div class="header-bar">
+        <h1>Register</h1>
+    </div>
+
+    <div class="card-body">
+        <form method="POST">
+            {% csrf_token %}
+
+            <div>
+                <label>{{ form.username.label }}</label>
+                {{ form.username }}
+            </div>
+
+            <div>
+                <label>{{ form.password1.label }}</label>
+                {{ form.password1 }}
+            </div>
+
+            <div>
+                <label>{{ form.password2.label }}</label>
+                {{ form.password2 }}
+            </div>
+
+            <input style="margin-top: 10px;" class="button" type="submit" value="Register">
+        </form>
+
+        <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
